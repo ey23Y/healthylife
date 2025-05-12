@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.3s ease;
+      color: #1e1e1e; /* постійний колір тексту */
+    }
+
+    /* Світла тема (основна) */
+    body.light-theme {
+      background-color: #fdf6e3; /* світлий бежевий */
+    }
+
+    /* Темна тема */
+    body.dark-theme {
+      background-color: #2d2d2d;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #ccc;
+      position: relative;
+    }
+
+    #theme-toggle {
+      padding: 10px 20px;
+      background-color: #f5deb3; /* бежевий */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    #theme-toggle:hover {
+      background-color: #e5cda8;
+    }
+  </style>
+</head>
+<body class="light-theme">
+
+  <main>
+  <footer>
+    <button id="theme-toggle">Змінити тему</button>
+  </footer>
+
+  <script>
+    const button = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    body.classList.remove('light-theme', 'dark-theme');
+    body.classList.add(savedTheme + '-theme');
+
+    button.addEventListener('click', () => {
+      if (body.classList.contains('light-theme')) {
+        body.classList.replace('light-theme', 'dark-theme');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        body.classList.replace('dark-theme', 'light-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+  <title>healthy lifestyle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #1e1e1e;
+      color: #f8f1f1;
+    }
+    header {
+      background: linear-gradient(to right, #d9a7c7, #fffcdc);
+      padding: 2rem;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #1e1e1e;
+    }
+    .main-bg {
+      background-image: url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74');
+      background-size: cover;
+      background-position: center;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+    .intro-text {
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #f3cfcf;
+      background-color: rgba(30,30,30,0.7);
+      padding: 2rem;
+      border-radius: 20px;
+    }
+    nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #2e2e2e;
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      gap: 1rem;
+      z-index: 999;
+    }
+    .btn {
+      background: linear-gradient(45deg, #f4c4f3, #fc67fa);
+      color: #1e1e1e;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #fcb7f7, #ff9fe6);
+    }
+    section {
+      display: none;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #2e2e2e;
+      border-radius: 20px;
+      margin-bottom: 5rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ffd6d6;
+      text-align: center;
+    }
+    .meal {
+      margin-bottom: 2rem;
+    }
+    a {
+      color: #f3cfcf;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .sub-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .video-section {
+      margin-top: 2rem;
+      display: none;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 10px;
+    }
+    input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<body>
+
+  <header>
+    <div class="logo">SPORT</div>
+    <nav>
+      <a href="#">Тренування</a>
+      <a href="#">Харчування</a>
+      <a href="#">Додатки</a>
+      <a href="#">Марафони</a>
+	  <a href="#">Трекери</a
+      <i class="fas fa-moon theme-toggle" id="themeToggle" title="Змінити тему"></i>
+    </nav>
+  </header>
+
+<div class="main-bg">
+  <div class="intro-text">
+    <p>Start building your dream body now!</p>
+  </div>
+</div>
+
+<nav>
+  <button class="btn" onclick="showSection('training')">Тренування</button>
+  <button class="btn" onclick="showSection('meals')">Тижневий план харчування</button>
+  <button class="btn" onclick="showSection('apps')">Корисні додатки</button>
+  <button class="btn" onclick="showSection('marathons')">Безкоштовні марафони</button>
+  <button class="btn" onclick="showSection('tracker')">Трекери</button>
+</nav>
+
+<section id="home">
+  <h2>Головна</h2>
+  
+</section>
+
+<section id="training">
+  <h2>Тренування</h2>
+  <div class="sub-buttons">
+    <button class="btn" onclick="showTraining('upper')">Upper Body</button>
+    <button class="btn" onclick="showTraining('lower')">Lower Body</button>
+    <button class="btn" onclick="showTraining('full')">Full Body</button>
+  </div>
+  <div id="upper" class="video-section">
+    <h3>Upper Body</h3>
+    <iframe src="https://www.youtube.com/embed/xxVRCzT2a1E" allowfullscreen></iframe>
+	<p><b>Поради для підвищення ефективності тренування:</b></p> 
+	<p>1.Зроби якісну розминку</p>
+	<p>2.Дотримуйся правильної техніки при виконанні вправ</p> 
+    <p>3.Тримай спину рівно</p>
+    <p>4.Обирай вагу для вправ індивідуально</p>
+    <p>5.Зосередся над робочою частиною тіла</p>
+    <p>6.Не забувай про дихання</p>	
+	<p><b>Харчування:</b></p>
+	<p>До тренування: банан, вода.</p> 
+	<p>Після: білковий коктейль, вуглеводи.</p>
+  </div>
+  <div id="lower" class="video-section">
+    <h3>Lower Body</h3>
+    <iframe src="https://www.youtube.com/embed/2MoGxae-zyo" allowfullscreen></iframe>
+	<p><b>Поради для підвищення ефективності тренування:</b></p> 
+	<p>1.Зроби якісну розминку</p>
+	<p>2.Дотримуйся правильної техніки при виконанні вправ</p> 
+    <p>3.Слідкуй за постановкою колін, не вгинай їх в середину</p>
+    <p>4.Обирай вагу для вправ індивідуально</p>
+    <p>5.Зосередся над робочою частиною тіла</p>
+    <p>6.Не забувай про дихання</p>	
+	<p><b>Харчування:</b></p>
+	<p>До тренування: вода, горіхи.</p> 
+	<p>Після: яйця(білок), цільнозерновий хліб.</p>
+  </div>
+  <div id="full" class="video-section">
+    <h3>Full Body</h3>
+    <iframe src="https://www.youtube.com/embed/ml6cT4AZdqI" allowfullscreen></iframe>
+	<p><b>Поради для підвищення ефективності тренування:</b></p> 
+	<p>1.Зроби якісну розминку</p>
+	<p>2.Дотримуйся правильної техніки при виконанні вправ</p> 
+    <p>3.Старайся зберігати темп для ефективності тренування</p>
+    <p>4.Не роби задовгий відпочинок між вправами</p>
+    <p>5.Зосередся над робочою частиною тіла</p>
+    <p>6.Не забувай про дихання</p>	
+	<p><b>Харчування:</b></p>
+	<p>До тренування: енергетичний батончик.</p> 
+	<p>Після: куряче філе, овочевий салат.</p> До: енергетичний батончик. Після: курка, салат.</p>
+  </div>
+</section>
+
+<section id="meals">
+  <h2>Тижневий план харчування</h2>
+
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Понеділок</h3>
+      <p><b>Сніданок:</b> Вівсянка з ягодами. Інгредієнти: вівсянка, молоко, ягоди. Час: 10 хв.</p>
+      <img src="path_to_image_1.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Куряча грудка з гречкою. Інгредієнти: курка, гречка, овочі. Час: 25 хв.</p>
+      <img src="path_to_image_2.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Тушковані овочі з кіноа. Час: 15 хв.</p>
+      <img src="path_to_image_3.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+  
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Вівторок</h3>
+      <p><b>Сніданок:</b> Омлет з помідорами і шпинатом. Інгредієнти: яйця, помідори, шпинат. Час: 15 хв.</p>
+      <img src="path_to_image_4.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Салат з тунцем і яйцем. Інгредієнти: тунець, яйце, листя салату, кукурудза. Час: 20 хв.</p>
+      <img src="path_to_image_5.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Картопля запечена з рибою. Інгредієнти: філе риби, картопля, лимон. Час: 30 хв.</p>
+      <img src="path_to_image_6.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Середа</h3>
+      <p><b>Сніданок:</b> Гречка з молоком. Інгредієнти: гречка, молоко, мед. Час: 10 хв.</p>
+      <img src="path_to_image_7.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Рис з куркою і овочами. Інгредієнти: рис, курка, броколі. Час: 30 хв.</p>
+      <img src="path_to_image_8.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Салат з авокадо і курячою грудкою. Час: 15 хв.</p>
+      <img src="path_to_image_9.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Четвер</h3>
+      <p><b>Сніданок:</b> Панкейки з ягодами. Інгредієнти: борошно, яйця, молоко, ягоди. Час: 20 хв.</p>
+      <img src="path_to_image_10.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Спагетті з овочами. Інгредієнти: паста, помідори, перець, оливки. Час: 25 хв.</p>
+      <img src="path_to_image_11.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Салат з тунцем і овочами. Час: 20 хв.</p>
+      <img src="path_to_image_12.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+  
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>П'ятниця</h3>
+      <p><b>Сніданок:</b> Каша з чіа. Інгредієнти: чіа, молоко, мед, ягоди. Час: 10 хв.</p>
+      <img src="path_to_image_13.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Стейк з овочами. Інгредієнти: яловичина, помідори, шпинат. Час: 30 хв.</p>
+      <img src="path_to_image_14.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Лосось з гречкою. Час: 25 хв.</p>
+      <img src="path_to_image_15.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+ 
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Субота</h3>
+      <p><b>Сніданок:</b> Тости з авокадо. Інгредієнти: хліб, авокадо, яйце. Час: 15 хв.</p>
+      <img src="path_to_image_16.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Суп з куркою. Інгредієнти: курка, морква, картопля, цибуля. Час: 30 хв.</p>
+      <img src="path_to_image_17.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Овочевий рагу. Час: 20 хв.</p>
+      <img src="path_to_image_18.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+  <div class="meal-content">
+    <div class="meal-text">
+      <h3>Неділя</h3>
+      <p><b>Сніданок:</b> Млинці з медом. Інгредієнти: борошно, яйця, мед. Час: 20 хв.</p>
+      <img src="path_to_image_19.jpg" alt="Сніданок">
+      <p><b>Обід:</b> Лазанья. Інгредієнти: паста, соус, м'ясо. Час: 45 хв.</p>
+      <img src="path_to_image_20.jpg" alt="Обід">
+      <p><b>Вечеря:</b> Картопля запечена з куркою. Час: 30 хв.</p>
+      <img src="path_to_image_21.jpg" alt="Вечеря">
+    </div>
+  </div>
+
+</section>
+
+
+<style>
+.meal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.meal-text {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.meal-text img {
+  width: 250px;
+  height: 160px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+/* Адаптивний дизайн для мобільних екранів */
+@media (max-width: 600px) {
+  .meal-text img {
+    width: 100%;
+    height: auto;
+  }
+
+  .meal-text {
+    font-size: 16px;
+  }
+
+  .meal-content {
+    padding: 0 10px;
+  }
+}
+</style>
+
+<section id="apps">
+  <h2>Корисні додатки</h2>
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=watertracker.waterreminder.watertrackerapp.drinkwater" target="_blank">Drink Water Reminder</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.myfitnesspal.android" target="_blank">MyFitnessPal – калорії</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.tayu.tau.pedometer" target="_blank">Крокомір</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=loseweight.weightloss.workout.fitness" target="_blank">Схуднення</a></li>
+    <li><a href="https://play.google.com/store/apps/details?id=com.zeopoxa.fitness.running" target="_blank">Nike Run Club</a></li>
+  </ul>
+</section>
+
+<section id="marathons">
+  <h2>Безкоштовні марафони</h2>
+  <ul>
+    <li><a href="https://www.fitnessblender.com/plans" target="_blank">Fitness Blender Free Plans</a></li>
+    <li><a href="https://www.blogilates.com/blog/free-workout-calendar/" target="_blank">Blogilates Free Calendar</a></li>
+    <li><a href="https://darebee.com/programs.html" target="_blank">Darebee Workout Programs</a></li>
+  </ul>
+</section>
+
+<section id="tracker">
+  <h2>Трекери</h2>
+  <div class="meal">
+    <h3>Трекер води</h3>
+    <p>Скільки склянок води ви сьогодні випили?</p>
+    <button onclick="incrementWater()" class="btn">+1 склянка</button>
+    <p id="waterCount">0 склянок</p>
+  </div>
+  <div class="meal">
+    <h3>Трекер калорій</h3>
+    <p>Введіть кількість калорій, яку ви спожили:</p>
+    <input type="number" id="calInput" placeholder="Наприклад, 500">
+    <button onclick="addCalories()" class="btn">Додати</button>
+    <p>Всього: <span id="caloriesTotal">0</span> калорій</p>
+  </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f0f4f8;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .mood-options {
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .emoji {
+      margin: 0 15px;
+      transition: transform 0.2s;
+    }
+
+    .emoji:hover {
+      transform: scale(1.2);
+    }
+
+    .selected {
+      border: 3px solid #4caf50;
+      border-radius: 50%;
+      padding: 5px;
+      background-color: #e6ffe6;
+    }
+
+    #saved-status {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Як ти почуваєшся після тренування?</h1>
+
+  <div class="mood-options">
+    <span class="emoji" data-mood="happy">😊</span>
+    <span class="emoji" data-mood="neutral">😐</span>
+    <span class="emoji" data-mood="tired">😩</span>
+  </div>
+
+  <div id="saved-status"></div>
+
+  <script>
+    const emojis = document.querySelectorAll('.emoji');
+    const savedStatus = document.getElementById('saved-status');
+
+    // Завантажити збережений настрій
+    const savedMood = localStorage.getItem('mood');
+    if (savedMood) {
+      const selected = document.querySelector(`.emoji[data-mood="${savedMood}"]`);
+      if (selected) {
+        selected.classList.add('selected');
+        savedStatus.textContent = `Останній вибір: ${selected.textContent}`;
+      }
+    }
+
+    emojis.forEach(emoji => {
+      emoji.addEventListener('click', () => {
+        emojis.forEach(e => e.classList.remove('selected'));
+        emoji.classList.add('selected');
+
+        const mood = emoji.getAttribute('data-mood');
+        localStorage.setItem('mood', mood);
+        savedStatus.textContent = `Збережено: ${emoji.textContent}`;
+      });
+    });
+  </script>
+
+</body>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f4f8;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .timer-box {
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .display {
+      font-size: 2em;
+      margin: 10px 0;
+    }
+
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      font-size: 1em;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .start { background-color: #4caf50; color: white; }
+    .stop { background-color: #f44336; color: white; }
+    .reset { background-color: #607d8b; color: white; }
+  </style>
+</head>
+<body>
+
+  <h1>⏱️ Тренувальний трекер</h1>
+
+  <!-- Таймер -->
+  <div class="timer-box">
+    <h2>Таймер зворотного відліку</h2>
+    <div>
+      <label>Хвилини: <input type="number" id="minutes" value="0" min="0" /></label>
+      <label>Секунди: <input type="number" id="seconds" value="30" min="0" max="59" /></label>
+    </div>
+    <div class="display" id="countdown">00:30</div>
+    <button class="start" onclick="startCountdown()">Старт</button>
+    <button class="reset" onclick="resetCountdown()">Скинути</button>
+  </div>
+
+  <!-- Секундомір -->
+  <div class="timer-box">
+    <h2>Секундомір</h2>
+    <div class="display" id="stopwatch">00:00</div>
+    <button class="start" onclick="startStopwatch()">Старт</button>
+    <button class="stop" onclick="stopStopwatch()">Стоп</button>
+    <button class="reset" onclick="resetStopwatch()">Скинути</button>
+  </div>
+
+  <script>
+    // === Таймер зворотного відліку ===
+    let countdownInterval;
+    function startCountdown() {
+      clearInterval(countdownInterval);
+      let min = parseInt(document.getElementById('minutes').value) || 0;
+      let sec = parseInt(document.getElementById('seconds').value) || 0;
+      let totalSeconds = min * 60 + sec;
+
+      countdownInterval = setInterval(() => {
+        if (totalSeconds <= 0) {
+          clearInterval(countdownInterval);
+          alert("Час вийшов!");
+        } else {
+          totalSeconds--;
+          const m = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+          const s = String(totalSeconds % 60).padStart(2, '0');
+          document.getElementById('countdown').textContent = `${m}:${s}`;
+        }
+      }, 1000);
+    }
+
+    function resetCountdown() {
+      clearInterval(countdownInterval);
+      const min = parseInt(document.getElementById('minutes').value) || 0;
+      const sec = parseInt(document.getElementById('seconds').value) || 0;
+      const m = String(min).padStart(2, '0');
+      const s = String(sec).padStart(2, '0');
+      document.getElementById('countdown').textContent = `${m}:${s}`;
+    }
+
+    // === Секундомір ===
+    let stopwatchInterval;
+    let stopwatchSeconds = 0;
+
+    function startStopwatch() {
+      clearInterval(stopwatchInterval);
+      stopwatchInterval = setInterval(() => {
+        stopwatchSeconds++;
+        const m = String(Math.floor(stopwatchSeconds / 60)).padStart(2, '0');
+        const s = String(stopwatchSeconds % 60).padStart(2, '0');
+        document.getElementById('stopwatch').textContent = `${m}:${s}`;
+      }, 1000);
+    }
+
+    function stopStopwatch() {
+      clearInterval(stopwatchInterval);
+    }
+
+    function resetStopwatch() {
+      clearInterval(stopwatchInterval);
+      stopwatchSeconds = 0;
+      document.getElementById('stopwatch').textContent = "00:00";
+    }
+  </script>
+
+</body>
+<title>Опитування: Здоровий спосіб життя</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      padding: 2em;
+    }
+    form {
+      background: light blue;
+      padding: 2em;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 1.5em;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 0.5em;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 0.7em 1.5em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 1.5em;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="healthForm">
+    <h2>Оціни свій спосіб життя</h2>
+
+    <div class="question">
+      <label>Як часто ти займаєшся спортом?</label>
+      <select name="exercise" required>
+        <option value="">Оберіть...</option>
+        <option value="3">Щодня</option>
+        <option value="2">Кілька разів на тиждень</option>
+        <option value="1">Рідко</option>
+        <option value="0">Ніколи</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label>Скільки води ти п’єш на день?</label>
+      <select name="water" required>
+        <option value="">Оберіть...</option>
+        <option value="3">2-3 літри</option>
+        <option value="2">1-2 літри</option>
+        <option value="1">Менше 1 літра</option>
+        <option value="0">М майже не п’ю</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label>Які в тебе є звички?</label>
+      <input type="checkbox" name="habits" value="2"> Здорове харчування<br>
+      <input type="checkbox" name="habits" value="2"> Повноцінний сон<br>
+      <input type="checkbox" name="habits" value="1"> Медитація/релаксація<br>
+      <input type="checkbox" name="habits" value="-2"> Куріння<br>
+      <input type="checkbox" name="habits" value="-2"> Вживання алкоголю
+    </div>
+
+    <button type="submit">Перевірити</button>
+
+    <div id="result"></div>
+  </form>
+
+  <script>
+    document.getElementById("healthForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      let form = e.target;
+      let score = 0;
+
+      score += parseInt(form.exercise.value || 0);
+      score += parseInt(form.water.value || 0);
+
+      let habits = form.querySelectorAll('input[name="habits"]:checked');
+      habits.forEach(habit => {
+        score += parseInt(habit.value);
+      });
+
+      let result = document.getElementById("result");
+      if (score >= 7) {
+        result.textContent = "Вітаємо! Ви ведете здоровий спосіб життя!";
+        result.style.color = "green";
+      } else if (score >= 4) {
+        result.textContent = "Ваш спосіб життя помірно здоровий. Є куди прагнути!";
+        result.style.color = "orange";
+      } else {
+        result.textContent = "Схоже, вам варто переглянути свої звички.";
+        result.style.color = "red";
+      }
+    });
+  </script>
+
+</body>
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+    if (id === 'training') {
+      document.querySelectorAll('.video-section').forEach(v => v.style.display = 'none');
+    }
+  }
+
+  function showTraining(type) {
+    document.querySelectorAll('.video-section').forEach(s => s.style.display = 'none');
+    document.getElementById(type).style.display = 'block';
+  }
+
+  let waterCount = 0;
+  function incrementWater() {
+    waterCount++;
+    document.getElementById('waterCount').innerText = waterCount + ' склянок';
+  }
+
+  let totalCalories = 0;
+  function addCalories() {
+    const input = document.getElementById('calInput').value;
+    totalCalories += parseInt(input || 0);
+    document.getElementById('caloriesTotal').innerText = totalCalories;
+    document.getElementById('calInput').value = '';
+  }
+
+  showSection('home'); // Показати головну при завантаженні
+</script>
+
+</body>
+</html>
